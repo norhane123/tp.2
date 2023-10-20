@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int sommeTableau(int tableau[], int taille) {
+    if (taille == 0) {
+        return 0;
+    } else {
+        return tableau[taille - 1] + sommeTableau(tableau, taille - 1);
+    }
+}
+
+int main() {
+    int notes[] = {10, 15, 20, 12, 8};
+    int taille = sizeof(notes) / sizeof(notes[0]);
+
+    int somme = sommeTableau(notes, taille);
+    printf("La somme des notes est : %d\n", somme);
+
+    return 0;
+}
